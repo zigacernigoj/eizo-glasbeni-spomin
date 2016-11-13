@@ -31,6 +31,17 @@ $.getJSON("sets/example.json", function (data) {
                 '</div>'
             );
         }
+        else if (elements[el].type === "sound") {
+            $("#kartice").append(
+                '<div class="col-lg-2">' +
+                '<div class="panel panel-default">' +
+                '<div class="panel-body">' +
+                '<img src="' + elements[el].image + '" class="img-responsive" alt="klavir">' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            );
+        }
 
 
     }

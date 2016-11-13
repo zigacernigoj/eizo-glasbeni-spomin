@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+            <state relative-caret-position="616">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
+            <state relative-caret-position="846">
+              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -70,9 +70,9 @@
         <option value="$PROJECT_DIR$/description.json" />
         <option value="$PROJECT_DIR$/example.json" />
         <option value="$PROJECT_DIR$/sets/description.json" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/sets/example.json" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -221,12 +221,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1479058254147</updated>
-      <workItem from="1479058256881" duration="5889000" />
+      <workItem from="1479058256881" duration="6057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5889000" />
+    <option name="totallyTimeSpent" value="6057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
@@ -279,14 +279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sets/example.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -297,8 +289,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
+        <state relative-caret-position="846">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding />
         </state>
       </provider>
