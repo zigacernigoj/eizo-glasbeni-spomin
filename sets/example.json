@@ -20,6 +20,60 @@
       "text": "",
       "sound": "",
       "image": "sets/img/glasbila/piano.png"
+    },
+    {
+      "e_id": "0",
+      "e_name": "prvi element para",
+      "pair_id": "1",
+      "type": "text",
+      "text": "klavir",
+      "sound": "",
+      "image": ""
+    },
+    {
+      "e_id": "1",
+      "e_name": "drugi element para",
+      "pair_id": "0",
+      "type": "sound",
+      "text": "",
+      "sound": "sets/sound/glasbila/test.ogg",
+      "image": ""
+    },
+    {
+      "e_id": "0",
+      "e_name": "prvi element para",
+      "pair_id": "1",
+      "type": "text",
+      "text": "klavir",
+      "sound": "",
+      "image": ""
+    },
+    {
+      "e_id": "1",
+      "e_name": "drugi element para",
+      "pair_id": "0",
+      "type": "image",
+      "text": "",
+      "sound": "",
+      "image": "sets/img/glasbila/piano.png"
+    },
+    {
+      "e_id": "0",
+      "e_name": "prvi element para",
+      "pair_id": "1",
+      "type": "text",
+      "text": "klavir",
+      "sound": "",
+      "image": ""
+    },
+    {
+      "e_id": "1",
+      "e_name": "drugi element para",
+      "pair_id": "0",
+      "type": "image",
+      "text": "",
+      "sound": "",
+      "image": "sets/img/glasbila/piano.png"
     }
   ]
 }

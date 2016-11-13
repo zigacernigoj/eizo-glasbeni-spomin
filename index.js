@@ -36,7 +36,11 @@ $.getJSON("sets/example.json", function (data) {
                 '<div class="col-lg-2">' +
                 '<div class="panel panel-default">' +
                 '<div class="panel-body">' +
-                '<img src="' + elements[el].image + '" class="img-responsive" alt="klavir">' +
+                '<audio controls>' +
+                '<source src="'+ elements[el].sound +'" type="audio/ogg">' +
+                '<source src="'+ elements[el].sound +'" type="audio/mpeg">' +
+                'Your browser does not support the audio element.' +
+                '</audio>' +
                 '</div>' +
                 '</div>' +
                 '</div>'
