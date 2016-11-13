@@ -11,9 +11,9 @@ $.getJSON("sets/example.json", function (data) {
 
         if (elements[el].type === "text") {
             $("#kartice").append(
-                '<div class="col-lg-2">' +
-                '<div class="panel panel-default">' +
-                '<div class="panel-body">' +
+                '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">' +
+                '<div class="kartica panel panel-default">' +
+                '<div class="kartica-content panel-body">' +
                 elements[el].text +
                 '</div>' +
                 '</div>' +
@@ -22,9 +22,9 @@ $.getJSON("sets/example.json", function (data) {
         }
         else if (elements[el].type === "image") {
             $("#kartice").append(
-                '<div class="col-lg-2">' +
-                '<div class="panel panel-default">' +
-                '<div class="panel-body">' +
+                '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">' +
+                '<div class="kartica panel panel-default">' +
+                '<div class="kartica-content panel-body">' +
                 '<img src="' + elements[el].image + '" class="img-responsive" alt="klavir">' +
                 '</div>' +
                 '</div>' +
@@ -33,12 +33,12 @@ $.getJSON("sets/example.json", function (data) {
         }
         else if (elements[el].type === "sound") {
             $("#kartice").append(
-                '<div class="col-lg-2">' +
-                '<div class="panel panel-default">' +
-                '<div class="panel-body">' +
+                '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">' +
+                '<div class="kartica panel panel-default">' +
+                '<div class="kartica-content panel-body">' +
                 '<audio controls>' +
-                '<source src="'+ elements[el].sound +'" type="audio/ogg">' +
-                '<source src="'+ elements[el].sound +'" type="audio/mpeg">' +
+                '<source src="' + elements[el].sound + '" type="audio/ogg">' +
+                '<source src="' + elements[el].sound + '" type="audio/mpeg">' +
                 'Your browser does not support the audio element.' +
                 '</audio>' +
                 '</div>' +
@@ -46,7 +46,13 @@ $.getJSON("sets/example.json", function (data) {
                 '</div>'
             );
         }
-
-
     }
+
+    var width = $(".kartica").width();
+    console.log(width);
+
+    $(".kartica").css({"height": width});
+    $(".kartica-content").css({"text-align": "center", "position": "relative", "top": "50%", "transform": "translateY(-50%)"});
 });
+
+
