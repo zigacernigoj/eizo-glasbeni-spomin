@@ -8,7 +8,7 @@
       "e_name": "prvi element para",
       "pair_id": "1",
       "type": "text",
-      "text": "prvi el",
+      "text": "klavir",
       "sound": "",
       "image": ""
     },
@@ -16,10 +16,10 @@
       "e_id": "1",
       "e_name": "drugi element para",
       "pair_id": "0",
-      "type": "text",
-      "text": "drugi el",
+      "type": "image",
+      "text": "",
       "sound": "",
-      "image": ""
+      "image": "sets/img/glasbila/piano.png"
     }
   ]
 }
