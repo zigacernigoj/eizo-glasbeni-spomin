@@ -1,0 +1,25 @@
+{
+  "set_id": "ID seta kartic [INT]",
+  "set_name": "ime seta: glasbila / note / skladatelji / ... [STRING]",
+
+  "elements": [
+    {
+      "e_id": "id elementa - kartice [INT]",
+      "e_name": "opcijski podatek - za lažjo orientacijo [STRING]",
+      "pair_id": "id para - da vemo, katera 2 skupaj pašeta [INT]",
+      "type": "text / sound / image [STRING]",
+      "text": "besedilo kartice; se upošteva samo, če je type = text [STRING]",
+      "sound": "url do zvoka; se upošteva samo, če je type = sound [STRING]",
+      "image": "url do slike; se upošteva samo, če je type = image [STRING]"
+    },
+    {
+      "e_id": "id elementa - kartice [INT]",
+      "e_name": "opcijski podatek - za lažjo orientacijo [STRING]",
+      "pair_id": "id para - da vemo, katera 2 skupaj pašeta [INT]",
+      "type": "text / sound / image [STRING]",
+      "text": "besedilo kartice; se upošteva samo, če je type = text [STRING]",
+      "sound": "url do zvoka; se upošteva samo, če je type = sound [STRING]",
+      "image": "url do slike; se upošteva samo, če je type = image [STRING]"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "set_id": "0",
+  "set_name": "glasbila",
+
+  "elements": [
+    {
+      "e_id": "0",
+      "e_name": "prvi element para",
+      "pair_id": "1",
+      "type": "text",
+      "text": "prvi el",
+      "sound": "",
+      "image": ""
+    },
+    {
+      "e_id": "1",
+      "e_name": "drugi element para",
+      "pair_id": "0",
+      "type": "text",
+      "text": "drugi el",
+      "sound": "",
+      "image": ""
+    }
+  ]
+}
