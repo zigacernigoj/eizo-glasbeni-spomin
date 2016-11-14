@@ -1,0 +1,44 @@
+{
+  "pairs": [{
+    "name": "Klavir",
+    "el1": {
+      "type": 1,
+      "value": "Klavir"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/piano.png"
+    }
+  }, {
+    "name": "Kitara",
+    "el1": {
+      "type": 1,
+      "value": "Kitara"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/guitar.png"
+    }
+  }, {
+    "name": "Boben",
+    "el1": {
+      "type": 1,
+      "value": "Boben"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/drum.png"
+    }
+  }, {
+    "name": "Trobenta",
+    "el1": {
+      "type": 1,
+      "value": "Trobenta"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/trumpet.png"
+    }
+  }]
+
+}
