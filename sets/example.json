@@ -10,7 +10,8 @@
       "type": "text",
       "text": "klavir",
       "sound": "",
-      "image": ""
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
     },
     {
       "e_id": "1",
@@ -19,7 +20,8 @@
       "type": "image",
       "text": "",
       "sound": "",
-      "image": "sets/img/glasbila/piano.png"
+      "image": "sets/img/glasbila/piano.png",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
     },
     {
       "e_id": "0",
@@ -28,7 +30,8 @@
       "type": "text",
       "text": "klavir",
       "sound": "",
-      "image": ""
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
     },
     {
       "e_id": "1",
@@ -37,7 +40,8 @@
       "type": "sound",
       "text": "",
       "sound": "sets/sound/glasbila/test.ogg",
-      "image": ""
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
     },
     {
       "e_id": "0",
@@ -46,7 +50,8 @@
       "type": "text",
       "text": "klavir",
       "sound": "",
-      "image": ""
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
     },
     {
       "e_id": "1",
@@ -55,7 +60,8 @@
       "type": "image",
       "text": "",
       "sound": "",
-      "image": "sets/img/glasbila/piano.png"
+      "image": "sets/img/glasbila/piano.png",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
     },
     {
       "e_id": "0",
@@ -64,7 +70,8 @@
       "type": "text",
       "text": "klavir",
       "sound": "",
-      "image": ""
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
     },
     {
       "e_id": "1",
@@ -73,7 +80,8 @@
       "type": "image",
       "text": "",
       "sound": "",
-      "image": "sets/img/glasbila/piano.png"
+      "image": "sets/img/glasbila/piano.png",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
     }
   ]
 }

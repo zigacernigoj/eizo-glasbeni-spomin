@@ -10,7 +10,8 @@
       "type": "text / sound / image [STRING]",
       "text": "besedilo kartice; se upošteva samo, če je type = text [STRING]",
       "sound": "url do zvoka; se upošteva samo, če je type = sound [STRING]",
-      "image": "url do slike; se upošteva samo, če je type = image [STRING]"
+      "image": "url do slike; se upošteva samo, če je type = image [STRING]",
+      "hidden_icon": "url do slike - ko je kartica zakrita"
     },
     {
       "e_id": "id elementa - kartice [INT]",
@@ -19,7 +20,8 @@
       "type": "text / sound / image [STRING]",
       "text": "besedilo kartice; se upošteva samo, če je type = text [STRING]",
       "sound": "url do zvoka; se upošteva samo, če je type = sound [STRING]",
-      "image": "url do slike; se upošteva samo, če je type = image [STRING]"
+      "image": "url do slike; se upošteva samo, če je type = image [STRING]",
+      "hidden_icon": "url do slike - ko je kartica zakrita"
     }
   ]
 }
