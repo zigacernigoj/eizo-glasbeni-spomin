@@ -1,4 +1,4 @@
-$.getJSON("sets/example.json", function (data) {
+$.getJSON("sets/example_matej.json", function (data) {
     var set_id = data.set_id;
     var set_name = data.set_name;
     console.log(set_id + " " + set_name);

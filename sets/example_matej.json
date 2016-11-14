@@ -7,27 +7,27 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/piano.png"
+      "value": "sets/img/glasbila/piano.svg"
     }
   }, {
-    "name": "Kitara",
+    "name": "Violina",
     "el1": {
       "type": 1,
-      "value": "Kitara"
+      "value": "Violina"
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/guitar.png"
+      "value": "sets/img/glasbila/violin.svg"
     }
   }, {
-    "name": "Boben",
+    "name": "Triangel",
     "el1": {
       "type": 1,
-      "value": "Boben"
+      "value": "Triangel"
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/drum.png"
+      "value": "sets/img/glasbila/triangle.svg"
     }
   }, {
     "name": "Trobenta",
@@ -37,8 +37,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/trumpet.png"
+      "value": "sets/img/glasbila/trumpet.svg"
     }
   }]
-
 }
