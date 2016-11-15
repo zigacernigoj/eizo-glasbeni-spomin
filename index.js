@@ -14,7 +14,8 @@ $.getJSON("sets/example.json", function (data) {
                 '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">' +
                 '<div class="kartica panel panel-default">' +
                 '<div class="kartica-content panel-body">' +
-                elements[el].text +
+                '<p class="odkrita" style="display: none">' + elements[el].text + '</p>' +
+                '<img class="skrita" src="' + elements[el].hidden_icon + '" class="img-responsive" alt="skrita" style="width: 100%; display: block;">' +
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -25,7 +26,8 @@ $.getJSON("sets/example.json", function (data) {
                 '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">' +
                 '<div class="kartica panel panel-default">' +
                 '<div class="kartica-content panel-body">' +
-                '<img src="' + elements[el].image + '" class="img-responsive" alt="klavir">' +
+                '<img class="odkrita" src="' + elements[el].image + '" class="img-responsive" alt="klavir" style="display: none">' +
+                '<img class="skrita" src="' + elements[el].hidden_icon + '" class="img-responsive" alt="skrita" style="width: 100%; display: block;">' +
                 '</div>' +
                 '</div>' +
                 '</div>'
@@ -36,11 +38,12 @@ $.getJSON("sets/example.json", function (data) {
                 '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">' +
                 '<div class="kartica panel panel-default">' +
                 '<div class="kartica-content panel-body">' +
-                '<audio controls>' +
+                '<audio class="odkrita" controls style="display: none">' +
                 '<source src="' + elements[el].sound + '" type="audio/ogg">' +
                 '<source src="' + elements[el].sound + '" type="audio/mpeg">' +
                 'Your browser does not support the audio element.' +
                 '</audio>' +
+                '<img class="skrita" src="' + elements[el].hidden_icon + '" class="img-responsive" alt="skrita" style="width: 100%; display: block;">' +
                 '</div>' +
                 '</div>' +
                 '</div>'
