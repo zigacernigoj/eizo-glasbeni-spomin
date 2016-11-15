@@ -9,6 +9,10 @@ body {
     padding-top: 51px;
 }
 
+.container-fluid {
+    padding: 0;
+}
+
 #kartice {
     width: 100%;
     height: 100%;
