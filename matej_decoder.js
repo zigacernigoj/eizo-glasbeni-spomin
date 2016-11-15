@@ -10,12 +10,11 @@ $.getJSON("sets/example_matej.json", function (data) {
     $.each(cards, function(index, card) {
         $("#kartice").append(get_card(card));
     });
+    $('.kartica').each(function(){
+        var degree = (Math.floor(Math.random() * 7)) - 3;
+        $( this ).css({'transform' : 'rotate('+ degree +'deg)'});
+    })
     allCards = cards.length;
-
-
-
-
-
 });
 
 function get_card(el){
@@ -38,6 +37,11 @@ $( document ).ready(function() {
     $(window).on('resize', function() {
         computeWidth(allCards);
     });
+    $('.kartica').on('click', function(){
+        //transform: rotateY(120deg);
+        var curTrans = $(this).css('transform')
+        $(this).css({'transform' : curTrans +' rotateY(180deg)'})
+    })
 });
 
 /*
