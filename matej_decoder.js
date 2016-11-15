@@ -11,12 +11,10 @@ $.getJSON("sets/example_matej.json", function (data) {
     var width = $(".kartica").width();
     console.log(width);
 
-    $(".kartica").css({"height": width});
-    $(".kartica-content").css({"text-align": "center", "position": "relative", "top": "50%", "transform": "translateY(-50%)"});
 });
 
 function get_card(el){
-    var card = '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4"><div class="kartica panel panel-default"><div class="kartica-content panel-body">';
+    var card = '<div class="kartica"><div class="kartica-content">';
     switch(el.type){
         case 1:
             card += el.value;
@@ -25,7 +23,7 @@ function get_card(el){
             card += '<img src="' + el.value + '" class="img-responsive" alt="klavir"></div></div></div>';
             break;
     }
-    card += '</div></div></div>';
+    card += '</div></div>';
     return card;
 
 }
