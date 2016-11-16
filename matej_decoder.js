@@ -18,7 +18,7 @@ $.getJSON("sets/example_matej.json", function (data) {
 });
 
 function get_card(el){
-    var card = '<div class="kartica" data-pair="2"><div class="kartica-content front">';
+    var card = '<div class="kartica" data-pair="2"><div class="kartica-content back">';
     switch(el.type){
         case 1:
             card += el.value;
@@ -27,7 +27,7 @@ function get_card(el){
             card += '<img src="' + el.value + '" class="img-responsive" alt="klavir">'; //</div></div></div>
             break;
     }
-    card += '</div> <div class="back"></div> </div>'; //</div>
+    card += '</div> <div class="front"></div> </div>'; //</div>
     return card;
 
 }
