@@ -58,10 +58,10 @@ function computeWidth(n){
     var heightN = n/widthN;
     //določi velikost tako, da optimalna razporeditev pade znotraj okna
     //32 odštejemo, ker ima vsaka kartica 10px padding in 2px za border in še dodatnih 10 pri adnjem elementu
-    var size = Math.min(((kWidth-(widthN * 12 + 10))/widthN), ((kHeight-(heightN * 12 + 10))/heightN));
+    var size = Math.min(((kWidth-(widthN * 14 + 10))/widthN), ((kHeight-(heightN * 14 + 10))/heightN));
 
     //odšteje margine in borderje in padding da dobimo levi in desni odmik, da so kartice poravnane na sredino
-    var paddingKartice = (kWidth-(widthN * 12 + 10)-(size*widthN))/2;
+    var paddingKartice = (kWidth-(widthN * 14 + 10)-(size*widthN))/2;
     $('#kartice').css({'padding-left': paddingKartice, 'padding-right': paddingKartice});
     $('.kartica').width(size);
     $('.kartica').height(size);
