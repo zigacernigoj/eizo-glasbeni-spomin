@@ -18,16 +18,16 @@ $.getJSON("sets/example_matej.json", function (data) {
 });
 
 function get_card(el){
-    var card = '<div class="kartica" data-pair="2"><div class="kartica-content">';
+    var card = '<div class="kartica" data-pair="2"><div class="kartica-content front">';
     switch(el.type){
         case 1:
             card += el.value;
             break;
         case 2:
-            card += '<img src="' + el.value + '" class="img-responsive" alt="klavir"></div></div></div>';
+            card += '<img src="' + el.value + '" class="img-responsive" alt="klavir">'; //</div></div></div>
             break;
     }
-    card += '</div></div>';
+    card += '</div> <div class="back"></div> </div>'; //</div>
     return card;
 
 }
