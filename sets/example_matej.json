@@ -40,64 +40,64 @@
       "value": "sets/img/glasbila/trumpet.svg"
     }
   }, {
-    "name": "Trobenta",
+    "name": "Čelo",
     "el1": {
       "type": 1,
-      "value": "Trobenta"
+      "value": "Čelo"
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/trumpet.svg"
+      "value": "sets/img/glasbila/cello.svg"
     }
   }, {
-    "name": "Trobenta",
+    "name": "Klarinet",
     "el1": {
       "type": 1,
-      "value": "Trobenta"
+      "value": "Klarinet"
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/trumpet.svg"
+      "value": "sets/img/glasbila/clarinet.svg"
     }
   }, {
-    "name": "Trobenta",
+    "name": "Flavta",
     "el1": {
       "type": 1,
-      "value": "Trobenta"
+      "value": "Flavta"
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/trumpet.svg"
+      "value": "sets/img/glasbila/flute.svg"
     }
   }, {
-    "name": "Trobenta",
+    "name": "Boben",
     "el1": {
       "type": 1,
-      "value": "Trobenta"
+      "value": "Boben"
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/trumpet.svg"
+      "value": "sets/img/glasbila/bassdrum.svg"
     }
   }, {
-    "name": "Trobenta",
+    "name": "Harfa",
     "el1": {
       "type": 1,
-      "value": "Trobenta"
+      "value": "Harfa"
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/trumpet.svg"
+      "value": "sets/img/glasbila/harp.svg"
     }
   }, {
-    "name": "Trobenta",
+    "name": "Rog",
     "el1": {
       "type": 1,
-      "value": "Trobenta"
+      "value": "Rog"
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/glasbila/trumpet.svg"
+      "value": "sets/img/glasbila/horn.svg"
     }
   }]
 }
