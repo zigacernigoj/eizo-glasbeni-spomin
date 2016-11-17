@@ -21,13 +21,8 @@ body {
 
 .kartica {
     float: left;
-    //width: 10%;
     margin-top: 10px;
     margin-left: 10px;
-    border: 2px solid #999;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
 
     -webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
@@ -50,6 +45,10 @@ body {
     top: 0;
     left: 0;
     backface-visibility: hidden;
+    border: 2px solid #999;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 .back {
@@ -59,6 +58,15 @@ body {
     transform: rotateY( 180deg );
     padding: 10px;
     backface-visibility: hidden;
+    border: 2px solid #999;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .kartica-content {

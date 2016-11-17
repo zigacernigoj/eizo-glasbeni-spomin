@@ -1,9 +1,10 @@
 var allCards;
 $.getJSON("sets/example_matej.json", function (data) {
-
     var pairs = data.pairs;
     var cards = [];
     $.each(pairs, function(index, pair) {
+        pair.el1.pair_id = index;
+        pair.el2.pair_id = index;
         cards.push(pair.el1, pair.el2);
     });
     $.shuffle(cards);
@@ -18,7 +19,7 @@ $.getJSON("sets/example_matej.json", function (data) {
 });
 
 function get_card(el){
-    var card = '<div class="kartica" data-pair="2"><div class="kartica-content back">';
+    var card = '<div class="kartica" data-pair="' + el.pair_id + '" data-open="0"><div class="kartica-content back">';
     switch(el.type){
         case 1:
             card += el.value;
@@ -34,14 +35,12 @@ function get_card(el){
 
 $( document ).ready(function() {
     computeWidth(allCards);
+
     $(window).on('resize', function() {
         computeWidth(allCards);
     });
-    $('.kartica').on('click', function(){
-        //transform: rotateY(120deg);
-        var curTrans = $(this).css('transform')
-        $(this).css({'transform' : curTrans +' rotateY(180deg)'})
-    })
+
+    $('.kartica').on('click', cardClick)
 });
 
 /*
@@ -95,4 +94,51 @@ function findDivisors(n, bRatio){
         }
     }
     return bestW;
+}
+
+function openCard(card){
+    var curTrans = card.css('transform')
+    card.css({'transform' : curTrans +' rotateY(180deg)'});
+    card.attr('data-open', '1');
+}
+
+function closeCard(card){
+    var curTrans = card.css('transform')
+    card.css({'transform' : curTrans +' rotateY(180deg)'});
+    card.attr('data-open', '0');
+}
+
+var cardClick = function(){
+    //transform: rotateY(120deg);
+    if($(this).attr("data-open") == 1){
+        return;
+    }
+    openCard($(this));
+    var cur = $('#prva-izbira').val();
+    var izbran = $('#izbran').val();
+    var pair_id = $(this).data("pair");
+    if (izbran == false){
+        $('#izbran').val(1);
+        $('#prva-izbira').val(pair_id);
+    } else {
+        $('.kartica').off('click');
+        if(cur == pair_id){
+            setTimeout(function(){
+                $("div[data-pair='"+cur+"']").empty();
+                $('#prva-izbira').val(-1);
+                $('#izbran').val(0);
+                $('.kartica').on('click', cardClick);
+            },2000);
+        }
+        else {
+            setTimeout(function(){
+                $("div[data-open='1']").each(function(){
+                    closeCard($(this));
+                    $('#prva-izbira').val(-1);
+                    $('#izbran').val(0);
+                    $('.kartica').on('click', cardClick);
+                });
+            },2000);
+        }
+    }
 }
