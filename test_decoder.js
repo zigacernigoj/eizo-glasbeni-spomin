@@ -1,5 +1,12 @@
 var allCards;
-$.getJSON("sets/example_note.json", function (data) {
+
+/* da je lahko ista koda za vec json datotek */
+/* anchor (#...) doloca, kater json naj se nalozi*/
+
+var hash = window.location.hash.substr(1);
+console.log(hash);
+
+$.getJSON("sets/"+hash+".json", function (data) {
     var pairs = data.pairs;
     var cards = [];
     $.each(pairs, function(index, pair) {
@@ -44,7 +51,7 @@ $( document ).ready(function() {
 });
 
 /*
-nastavi velikost kartic in levi in desni odmik glavnega okna
+ nastavi velikost kartic in levi in desni odmik glavnega okna
  */
 function computeWidth(n){
     //nastavi padding na 0, da dobi pravilno velikost okna
@@ -67,12 +74,12 @@ function computeWidth(n){
 
 }
 /*
-parametra:  n - število kartic
-            bRatio - razmerje width/height diva, v katerega bomo dali kartice
+ parametra:  n - število kartic
+ bRatio - razmerje width/height diva, v katerega bomo dali kartice
 
-funkcija poišče vse deljitelje, najde optimalno razmerje razporeditve kartic
+ funkcija poišče vse deljitelje, najde optimalno razmerje razporeditve kartic
 
-vrne število kartic v eni vrstici
+ vrne število kartic v eni vrstici
  */
 function findDivisors(n, bRatio){
     var nRatio = 0;

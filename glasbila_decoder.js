@@ -1,5 +1,5 @@
 var allCards;
-$.getJSON("sets/glasbila.json", function (data) {
+$.getJSON("sets/example_matej.json", function (data) {
     var pairs = data.pairs;
     var cards = [];
     $.each(pairs, function(index, pair) {
