@@ -1,5 +1,5 @@
 var allCards;
-$.getJSON("sets/example_note.json", function (data) {
+$.getJSON("sets/note.json", function (data) {
     var pairs = data.pairs;
     var cards = [];
     $.each(pairs, function(index, pair) {
