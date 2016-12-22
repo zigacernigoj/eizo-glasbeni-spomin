@@ -2,7 +2,6 @@ var allCards;
 
 /* da je lahko ista koda za vec json datotek */
 /* anchor (#...) doloca, kater json naj se nalozi*/
-
 var hash = window.location.hash.substr(1);
 console.log(hash);
 
