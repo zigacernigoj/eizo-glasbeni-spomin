@@ -3,8 +3,21 @@ var st_odkritih = 0;
 /* da je lahko ista koda za vec json datotek */
 /* anchor (#...) doloca, kater json naj se nalozi*/
 
-var hash = getUrlParameter("set");;
+/*
+timer
+ */
+var seconds = 0;
+var minutes = 0;
+var hours = 0;
+var t;
+
+
+
+var hash = getUrlParameter("set");
 console.log(hash);
+if(hash == undefined){
+    hash = 'note';
+}
 
 $.getJSON("sets/"+hash+".json", function (data) {
     var pairs = data.pairs;
@@ -23,7 +36,8 @@ $.getJSON("sets/"+hash+".json", function (data) {
         $( this ).css({'transform' : 'rotate('+ degree +'deg)'});
     })
     allCards = cards.length;
-    $('#st-vseh').val(allCards/2);
+    $('#st-vseh-input').val(allCards/2);
+    $('#st-vseh').html(allCards/2);
     console.log(allCards/2);
 
 });
@@ -60,7 +74,7 @@ function computeWidth(n){
     //nastavi padding na 0, da dobi pravilno velikost okna
     $('#kartice').css({'padding-left': 0, 'padding-right': 0});
     var kWidth = $('#kartice').width();
-    var kHeight = $('#kartice').height();
+    var kHeight = $('#kartice').height()-50;
     //število kartic v vrstici
     var widthN = findDivisors(n, kWidth/kHeight);
     //število kartic v stolpcu
@@ -134,7 +148,14 @@ var cardClick = function(){
         $('.kartica').off('click');
         if(cur == pair_id){
             st_odkritih = st_odkritih + 1;
-            $('#st-odkritih').val(st_odkritih);
+            $('#st-odkritih-input').val(st_odkritih);
+            $('#st-odkritih').html(st_odkritih);
+            /*
+            konec igre
+             */
+            if(st_odkritih == allCards/2){
+                stopTime();
+            }
             setTimeout(function(){
                 $("div[data-pair='"+cur+"']").empty();
                 $('#prva-izbira').val(-1);
@@ -169,3 +190,35 @@ function getUrlParameter(sParam) {
         }
     }
 };
+
+
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    $('#time').html((hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds));
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+
+timer();
+
+/* Stop button */
+function stopTime() {
+    clearTimeout(t);
+}
+
+function clear() {
+    time.html("00:00:00");
+    seconds = 0; minutes = 0; hours = 0;
+}
