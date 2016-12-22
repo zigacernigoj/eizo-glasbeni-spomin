@@ -1,0 +1,103 @@
+{
+  "pairs": [{
+    "name": "basovski",
+    "el1": {
+      "type": 1,
+      "value": "Basovski ključ"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/basovski.svg"
+    }
+  }, {
+    "name": "celinka",
+    "el1": {
+      "type": 1,
+      "value": "Nota celinka"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/celinka.svg"
+    }
+  }, {
+    "name": "cetrtinka",
+    "el1": {
+      "type": 1,
+      "value": "Nota četrtinka"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/cetrtinka.svg"
+    }
+  }, {
+    "name": "nizaj",
+    "el1": {
+      "type": 1,
+      "value": "Nižaj"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/nizaj.svg"
+    }
+  }, {
+    "name": "osminka",
+    "el1": {
+      "type": 1,
+      "value": "Osminka"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/osminka.svg"
+    }
+  }, {
+    "name": "pavzacetrtinka",
+    "el1": {
+      "type": 1,
+      "value": "Pavza četrtinka"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/pavzacetrtinka.svg"
+    }
+  }, {
+    "name": "pavzaosminka",
+    "el1": {
+      "type": 1,
+      "value": "Pavza osminka"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/pavzaosminka.svg"
+    }
+  }, {
+    "name": "polovinka",
+    "el1": {
+      "type": 1,
+      "value": "Nota polovinka"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/polovinka.svg"
+    }
+  }, {
+    "name": "sestnajstinka",
+    "el1": {
+      "type": 1,
+      "value": "Nota šestnajstinka"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/sestnajstinka.svg"
+    }
+  }, {
+    "name": "violonski",
+    "el1": {
+      "type": 1,
+      "value": "Violinski ključ"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/violinski.svg"
+    }
+  }]
+}
