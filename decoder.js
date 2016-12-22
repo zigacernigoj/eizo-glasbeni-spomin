@@ -1,9 +1,9 @@
 var allCards;
-
+var st_odkritih = 0;
 /* da je lahko ista koda za vec json datotek */
 /* anchor (#...) doloca, kater json naj se nalozi*/
 
-var hash = window.location.hash.substr(1);
+var hash = getUrlParameter("set");;
 console.log(hash);
 
 $.getJSON("sets/"+hash+".json", function (data) {
@@ -23,6 +23,9 @@ $.getJSON("sets/"+hash+".json", function (data) {
         $( this ).css({'transform' : 'rotate('+ degree +'deg)'});
     })
     allCards = cards.length;
+    $('#st-vseh').val(allCards/2);
+    console.log(allCards/2);
+
 });
 
 function get_card(el){
@@ -130,6 +133,8 @@ var cardClick = function(){
     } else {
         $('.kartica').off('click');
         if(cur == pair_id){
+            st_odkritih = st_odkritih + 1;
+            $('#st-odkritih').val(st_odkritih);
             setTimeout(function(){
                 $("div[data-pair='"+cur+"']").empty();
                 $('#prva-izbira').val(-1);
@@ -149,3 +154,18 @@ var cardClick = function(){
         }
     }
 }
+
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
