@@ -86,6 +86,11 @@ body {
     backface-visibility: hidden;
 }
 
+
+.kartica-dd {
+    border: 2px solid #999;
+}
+
 footer {
     position: fixed;
     height: 50px;
