@@ -1,0 +1,87 @@
+{
+  "set_id": "0",
+  "set_name": "glasbila",
+
+  "elements": [
+    {
+      "e_id": "0",
+      "e_name": "prvi element para",
+      "pair_id": "1",
+      "type": "text",
+      "text": "klavir",
+      "sound": "",
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
+    },
+    {
+      "e_id": "1",
+      "e_name": "drugi element para",
+      "pair_id": "0",
+      "type": "image",
+      "text": "",
+      "sound": "",
+      "image": "sets/img/glasbila/piano.png",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
+    },
+    {
+      "e_id": "0",
+      "e_name": "prvi element para",
+      "pair_id": "1",
+      "type": "text",
+      "text": "klavir",
+      "sound": "",
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
+    },
+    {
+      "e_id": "1",
+      "e_name": "drugi element para",
+      "pair_id": "0",
+      "type": "sound",
+      "text": "",
+      "sound": "sets/sound/glasbila/test.ogg",
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
+    },
+    {
+      "e_id": "0",
+      "e_name": "prvi element para",
+      "pair_id": "1",
+      "type": "text",
+      "text": "klavir",
+      "sound": "",
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
+    },
+    {
+      "e_id": "1",
+      "e_name": "drugi element para",
+      "pair_id": "0",
+      "type": "image",
+      "text": "",
+      "sound": "",
+      "image": "sets/img/glasbila/piano.png",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
+    },
+    {
+      "e_id": "0",
+      "e_name": "prvi element para",
+      "pair_id": "1",
+      "type": "text",
+      "text": "klavir",
+      "sound": "",
+      "image": "",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
+    },
+    {
+      "e_id": "1",
+      "e_name": "drugi element para",
+      "pair_id": "0",
+      "type": "image",
+      "text": "",
+      "sound": "",
+      "image": "sets/img/glasbila/piano.png",
+      "hidden_icon": "sets/img/hidden/text-icon.png"
+    }
+  ]
+}
