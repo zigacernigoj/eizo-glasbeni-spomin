@@ -7,7 +7,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/basovski.svg"
+      "value": "sets/img/notni_elementi/basovski.svg"
     }
   }, {
     "name": "celinka",
@@ -17,7 +17,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/celinka.svg"
+      "value": "sets/img/notni_elementi/celinka.svg"
     }
   }, {
     "name": "cetrtinka",
@@ -27,7 +27,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/cetrtinka.svg"
+      "value": "sets/img/notni_elementi/cetrtinka.svg"
     }
   }, {
     "name": "nizaj",
@@ -37,7 +37,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/nizaj.svg"
+      "value": "sets/img/notni_elementi/nizaj.svg"
     }
   }, {
     "name": "osminka",
@@ -47,7 +47,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/osminka.svg"
+      "value": "sets/img/notni_elementi/osminka.svg"
     }
   }, {
     "name": "pavzacetrtinka",
@@ -57,7 +57,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/pavzacetrtinka.svg"
+      "value": "sets/img/notni_elementi/pavzacetrtinka.svg"
     }
   }, {
     "name": "pavzaosminka",
@@ -67,7 +67,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/pavzaosminka.svg"
+      "value": "sets/img/notni_elementi/pavzaosminka.svg"
     }
   }, {
     "name": "polovinka",
@@ -77,7 +77,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/polovinka.svg"
+      "value": "sets/img/notni_elementi/polovinka.svg"
     }
   }, {
     "name": "sestnajstinka",
@@ -87,7 +87,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/sestnajstinka.svg"
+      "value": "sets/img/notni_elementi/sestnajstinka.svg"
     }
   }, {
     "name": "violonski",
@@ -97,7 +97,7 @@
     },
     "el2": {
       "type": 2,
-      "value": "sets/img/note/violinski.svg"
+      "value": "sets/img/notni_elementi/violinski.svg"
     }
   }]
 }
