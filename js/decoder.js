@@ -80,10 +80,10 @@ function get_card_spomin(el) {
 // dodatne metode na koncu - ZA DRAG & DROP
 // drugih metod, ki so potrebne pri navadnem spominu, tu niso potrebne
 function get_card_dd(el) {
-    var card = '<div class="kartica kartica-dd" data-pair="' + el.pair_id + '" data-open="0" ondrop="drop(event)" ondragover="allowDrop(event)"><div class="kartica-content">';
+    var card = '<div class="kartica kartica-dd" data-pair="' + el.pair_id + '" data-open="0"><div class="kartica-content dd">';
     switch (el.type) {
         case 1:
-            card += '<p>' + el.value + '</p>';
+            card += '<p ondrop="drop(event)" ondragover="allowDrop(event)">' + el.value + '</p>';
             break;
         case 2:
             card += '<img src="' + el.value + '" id="' + el.pair_id + '" class="img-responsive" draggable="true" ondragstart="drag(event)">'; //</div></div></div>
@@ -108,6 +108,9 @@ $(document).ready(function () {
 /*
  nastavi velikost kartic in levi in desni odmik glavnega okna
  */
+
+var ht;
+
 function computeWidth(n) {
     //nastavi padding na 0, da dobi pravilno velikost okna
     $('#kartice').css({'padding-left': 0, 'padding-right': 0});
@@ -121,12 +124,18 @@ function computeWidth(n) {
     //32 odštejemo, ker ima vsaka kartica 10px padding in 2px za border in še dodatnih 10 pri adnjem elementu
     var size = Math.min(((kWidth - (widthN * 14 + 10)) / widthN), ((kHeight - (heightN * 14 + 10)) / heightN));
 
+    ht = size;
+
     //odšteje margine in borderje in padding da dobimo levi in desni odmik, da so kartice poravnane na sredino
     var paddingKartice = (kWidth - (widthN * 14 + 10) - (size * widthN)) / 2;
     $('#kartice').css({'padding-left': paddingKartice, 'padding-right': paddingKartice});
     $('.kartica').width(size);
     $('.kartica').height(size);
-    $('.back p').css({'line-height': size - 20 + 'px'})
+    $('.back p').css({'line-height': size - 20 + 'px'});
+    $('.dd p').css({
+        'line-height': size + 'px'
+    });
+
 
 }
 /*
@@ -267,7 +276,7 @@ function clear() {
 /* ZA DRAG & DROP */
 
 var dragpair_1 = null; // id izbranega elementa, ki ga uporabnik vlece
-var dragpair_2 = null; //id izbranega "polja" (kartice), kamor je uporabnik element odlozil
+var dragpair_2 = null; // izbrano "polje" (kartica), kamor je uporabnik element odlozil
 var dragparent = null; // stars izbranega elementa - v trenutku, ko uporabnik klikne nek element (zacetek vlecenja)
 var dragparent_content = null; // vsebina starsa
 
@@ -288,52 +297,59 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
 
-    console.log("id lokacije, kamor sem ga spustil:", ev.target.attributes["data-pair"].value);
-    dragpair_2 = ev.target.attributes["data-pair"].value;
 
-    if (dragpair_1 === dragpair_2) { // ce pravilno
-        console.log("pravilno");
+    if (ev.target.parentNode.parentNode != undefined) {
 
-        $(ev.target).css({"background": "green"});
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
 
-        setTimeout(function () {
-            $(ev.target).css({
-                "background": "white",
-                "border": "none"
-            });
-            $(ev.target).html("");
+        dragpair_2 = ev.target.parentNode.parentNode.attributes['data-pair'].value;
+        console.log("id lokacije, kamor sem ga spustil:", dragpair_2);
 
-            $(dragparent.parentNode).css({
-                "background": "white",
-                "border": "none"
-            });
-            $(dragparent.parentNode).html("");
+        $('#'+dragpair_1).css({'margin-top': '-' + ht  + 'px'});
 
-        }, 500);
+        if (dragpair_1 === dragpair_2) { // ce pravilno
+            console.log("pravilno");
 
-        st_odkritih = st_odkritih + 1;
-        $('#st-odkritih-input').val(st_odkritih);
-        $('#st-odkritih').html(st_odkritih);
-        /*
-         konec igre
-         */
-        if (st_odkritih == allCards / 2) {
-            stopTime();
+            $(ev.target).css({"background": "green"});
+
+            setTimeout(function () {
+                $(ev.target.parentNode.parentNode).css({
+                    "background": "white",
+                    "border": "none"
+                });
+                $(ev.target.parentNode.parentNode).html("");
+
+                $(dragparent.parentNode).css({
+                    "background": "white",
+                    "border": "none"
+                });
+                $(dragparent.parentNode).html("");
+
+            }, 500);
+
+            st_odkritih = st_odkritih + 1;
+            $('#st-odkritih-input').val(st_odkritih);
+            $('#st-odkritih').html(st_odkritih);
+            /*
+             konec igre
+             */
+            if (st_odkritih == allCards / 2) {
+                stopTime();
+            }
         }
-    }
-    else { // ce napacno
-        $(ev.target).css({"background": "red"});
+        else { // ce napacno
+            $(ev.target).css({"background": "red"});
 
-        setTimeout(function () {
-            $(ev.target).css({"background": "white"});
-            $(dragparent).html("");
-            $(dragparent).html(dragparent_content);
+            setTimeout(function () {
+                $(ev.target).css({"background": "white"});
+                $(dragparent).html("");
+                $(dragparent).html(dragparent_content);
 
-            $(ev.target).html(ev.target.firstChild);
+                $(ev.target).html(ev.target.firstChild);
 
-        }, 500);
+            }, 500);
+        }
     }
 }
