@@ -10,6 +10,8 @@ var minutes = 0;
 var hours = 0;
 var t;
 
+// da zbrises localstorage
+//localStorage.clear();
 
 // hash = glasbila / notni elementi /
 var hash = getUrlParameter("set");
@@ -32,9 +34,14 @@ var timeLimit = null; // v minutah
 var timeLeft = null; // za odstevanje
 
 var levelLimit = {
-    1: 180, // level: 1, limit: 3 min
-    2: 120, // level: 2, limit: 2 min
-    3: 60 // level: 3, limit: 1 min
+    1: 240, // level: 1, limit: 4 min
+    2: 210, // level: 2, limit: 3.5 min
+    3: 180, // level: 3, limit: 3 min
+    4: 150, // 2.5
+    5: 120, // 2
+    6: 90,  // 1.5
+    7: 60,  // 1
+    8: 30   // 0.5
 };
 
 if(limit === 'cas') {
@@ -44,9 +51,16 @@ if(limit === 'cas') {
         localStorage.setItem("level", 1);
         storedLevel = localStorage.getItem("level");
     }
+    if(parseInt(storedLevel) === 9) {
+        console.log('stopnja 9');
+        showCongrats();
+    }
+    else {
+        timeLimit = levelLimit[storedLevel];
+        console.log("storedlevel", storedLevel, "timelimit", timeLimit);
 
-    timeLimit = levelLimit[storedLevel];
-    limitTime();
+        limitTime();
+    }
 }
 else {
     timer();
@@ -409,19 +423,39 @@ function drop(ev) {
 
 function showCongrats() {
     // Get the modal
-    var modal = document.getElementById('congrats');
+    var modal = $('#theEnd');
+    modal.style='';
+    console.log(modal.style);
+
+    var modalContent = $('#modal-content');
+
+    var content =   '<span class="close">&times;</span>' +
+                    '<p>Bravo! Končal si igro</p>' +
+                    '<a href="index.html">Nazaj</a>';
+
+    if(limit === 'cas') {
+        var currentLevel = parseInt(localStorage.getItem("level"));
+        if(currentLevel === 9) {
+            console.log('stopnja 9');
+            content += 'KONČAL SI VSE STOPNJE';
+        }
+        else {
+            localStorage.setItem("level", currentLevel+1);
+            content += '<br><a href="game.html?set=notni_elementi&mode=dd&limit=cas">Naslednja stopnja</a>';
+        }
+    }
+    modalContent.html( content );
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
+    // var span = document.getElementsByClassName("close")[0];
 
     modal.style.display = "block";
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-        window.location.href = "index.html";
-    }
+    // span.onclick = function() {
+    //     modal.style.display = "none";
+    //     window.location.href = "index.html";
+    // }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
