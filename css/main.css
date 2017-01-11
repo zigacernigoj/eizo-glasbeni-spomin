@@ -137,14 +137,14 @@ footer p {
     color: #286C12
 }
 
-.thumbnail h5 {
+.thumbnail h5{
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 40px;
     line-height: 40px;
     margin: 0;
-    background-color: #FF992D;
+    background-color: Bisque;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.3s linear;

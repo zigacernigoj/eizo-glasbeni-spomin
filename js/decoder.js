@@ -136,8 +136,8 @@ function computeWidth(n) {
         'line-height': size + 'px'
     });
 
-
 }
+
 /*
  parametra:  n - število kartic
  bRatio - razmerje width/height diva, v katerega bomo dali kartice
