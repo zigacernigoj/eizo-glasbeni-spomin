@@ -3,11 +3,21 @@ html {
     height: 100%;
     font-family: 'Amatic SC', cursive;
 }
+
 body {
+    padding-top: 51px;
+}
+
+body#game {
     width: 100%;
     height: 100%;
     overflow: hidden;
     padding-top: 51px;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .container-fluid {
@@ -137,7 +147,7 @@ footer p {
     color: #286C12
 }
 
-.thumbnail h5{
+.thumbnail h4{
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -148,10 +158,11 @@ footer p {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.3s linear;
-    color: #286C12
+    color: #286C12;
+    font-weight: bold;
 }
 
-.thumbnail:hover h5{
+.thumbnail:hover h4{
     visibility: visible;
     opacity: 1;
 }
