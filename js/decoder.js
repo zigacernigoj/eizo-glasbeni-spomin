@@ -1,7 +1,6 @@
 var allCards;
 var st_odkritih = 0;
 /* da je lahko ista koda za vec json datotek */
-/* anchor (#...) doloca, kater json naj se nalozi*/
 
 /*
  timer
@@ -12,9 +11,9 @@ var hours = 0;
 var t;
 
 
-// hash = glasbila / note /
+// hash = glasbila / notni elementi /
 var hash = getUrlParameter("set");
-console.log(hash);
+// console.log(hash);
 if (hash == undefined) {
     hash = 'note';
 }
@@ -24,6 +23,35 @@ var mode = getUrlParameter("mode");
 if (mode == undefined) {
     mode = 'spomin';
 }
+
+// limit = cas / poteze / undefined
+// => undefined brez omejitev
+var limit = getUrlParameter("limit");
+
+var timeLimit = null; // v minutah
+var timeLeft = null; // za odstevanje
+
+var levelLimit = {
+    1: 180, // level: 1, limit: 3 min
+    2: 120, // level: 2, limit: 2 min
+    3: 60 // level: 3, limit: 1 min
+};
+
+if(limit === 'cas') {
+    console.log('time limit');
+    var storedLevel = localStorage.getItem("level");
+    if(storedLevel === undefined || storedLevel === null) {
+        localStorage.setItem("level", 1);
+        storedLevel = localStorage.getItem("level");
+    }
+
+    timeLimit = levelLimit[storedLevel];
+    limitTime();
+}
+else {
+    timer();
+}
+
 
 
 $.getJSON("sets/" + hash + ".json", function (data) {
@@ -237,7 +265,7 @@ function getUrlParameter(sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
     }
-};
+}
 
 
 function add() {
@@ -258,7 +286,30 @@ function timer() {
     t = setTimeout(add, 1000);
 }
 
-timer();
+function subtract() {
+    if(timeLimit === 0) {
+        stopTime();
+        showEnd();
+    }
+    else {
+        timeLimit--;
+        //console.log(timeLimit);
+
+        hours = Math.floor(timeLimit / 3600);
+        minutes = Math.floor((timeLimit - (hours * 3600)) / 60);
+        seconds = timeLimit - (hours * 3600) - (minutes * 60);
+
+        $('#time').html((hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds));
+
+        //console.log(hours, minutes, seconds);
+
+        limitTime();
+    }
+}
+
+function limitTime() {
+    t = setTimeout(subtract, 1000);
+}
 
 /* Stop button */
 function stopTime() {
@@ -337,6 +388,8 @@ function drop(ev) {
              */
             if (st_odkritih == allCards / 2) {
                 stopTime();
+
+                showCongrats();
             }
         }
         else { // ce napacno
@@ -350,6 +403,56 @@ function drop(ev) {
                 $(ev.target).html(ev.target.firstChild);
 
             }, 500);
+        }
+    }
+}
+
+function showCongrats() {
+    // Get the modal
+    var modal = document.getElementById('congrats');
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+        window.location.href = "index.html";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            window.location.href = "index.html";
+        }
+    }
+}
+
+function showEnd() {
+    // Get the modal
+    var modal = document.getElementById('theEnd');
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+
+    modal.style.display = "block";
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+        window.location.href = "index.html";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            window.location.href = "index.html";
         }
     }
 }
