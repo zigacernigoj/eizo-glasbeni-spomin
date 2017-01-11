@@ -70,11 +70,17 @@ else {
 
 $.getJSON("sets/" + hash + ".json", function (data) {
     var pairs = data.pairs;
+    $.shuffle(pairs);
+    var limit = 10;
     var cards = [];
     $.each(pairs, function (index, pair) {
         pair.el1.pair_id = index;
         pair.el2.pair_id = index;
-        cards.push(pair.el1, pair.el2);
+        if(limit > 0){
+            cards.push(pair.el1, pair.el2);
+            limit --;
+        }
+
     });
     $.shuffle(cards);
     $.each(cards, function (index, card) {
@@ -245,6 +251,7 @@ var cardClick = function () {
              */
             if (st_odkritih == allCards / 2) {
                 stopTime();
+                showCongrats();
             }
             setTimeout(function () {
                 $("div[data-pair='" + cur + "']").empty();
