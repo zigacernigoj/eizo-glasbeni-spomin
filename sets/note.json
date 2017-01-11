@@ -1,0 +1,123 @@
+{
+  "pairs": [{
+    "name": "c1",
+    "el1": {
+      "type": 1,
+      "value": "C1"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/c1.svg"
+    }
+  }, {
+    "name": "d1",
+    "el1": {
+      "type": 1,
+      "value": "D1"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/d1.svg"
+    }
+  }, {
+    "name": "e1",
+    "el1": {
+      "type": 1,
+      "value": "E1"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/e1.svg"
+    }
+  }, {
+    "name": "f1",
+    "el1": {
+      "type": 1,
+      "value": "F1"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/f1.svg"
+    }
+  }, {
+    "name": "g1",
+    "el1": {
+      "type": 1,
+      "value": "G1"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/g1.svg"
+    }
+  }, {
+    "name": "a1",
+    "el1": {
+      "type": 1,
+      "value": "A1"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/a1.svg"
+    }
+  }, {
+    "name": "h1",
+    "el1": {
+      "type": 1,
+      "value": "H1"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/h1.svg"
+    }
+  }, {
+    "name": "c2",
+    "el1": {
+      "type": 1,
+      "value": "C2"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/c2.svg"
+    }
+  }, {
+    "name": "d2",
+    "el1": {
+      "type": 1,
+      "value": "D2"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/d2.svg"
+    }
+  }, {
+    "name": "e2",
+    "el1": {
+      "type": 1,
+      "value": "E1"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/e2.svg"
+    }
+  }, {
+    "name": "f2",
+    "el1": {
+      "type": 1,
+      "value": "F2"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/f2.svg"
+    }
+  }, {
+    "name": "g2",
+    "el1": {
+      "type": 1,
+      "value": "G2"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/note/g2.svg"
+    }
+  }]
+}
