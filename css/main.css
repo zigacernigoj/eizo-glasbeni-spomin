@@ -207,3 +207,9 @@ footer p {
     text-decoration: none;
     cursor: pointer;
 }
+
+.lestvica span {
+    width: 90px !important;
+    text-align: left;
+    font-weight: bold;
+}

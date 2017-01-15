@@ -119,5 +119,147 @@
       "type": 2,
       "value": "sets/img/note/g2.svg"
     }
-  }]
+  },
+    {
+      "name": "cis",
+      "el1": {
+        "type": 1,
+        "value": "Cis"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/cis.svg"
+      }
+    }, {
+      "name": "dis",
+      "el1": {
+        "type": 1,
+        "value": "Dis"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/dis.svg"
+      }
+    }, {
+      "name": "eis",
+      "el1": {
+        "type": 1,
+        "value": "Eis"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/eis.svg"
+      }
+    }, {
+      "name": "fis",
+      "el1": {
+        "type": 1,
+        "value": "Fis"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/fis.svg"
+      }
+    }, {
+      "name": "gis",
+      "el1": {
+        "type": 1,
+        "value": "Gis"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/gis.svg"
+      }
+    }, {
+      "name": "ais",
+      "el1": {
+        "type": 1,
+        "value": "Ais"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/ais.svg"
+      }
+    }, {
+      "name": "his",
+      "el1": {
+        "type": 1,
+        "value": "His"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/his.svg"
+      }
+    },
+    {
+      "name": "ces",
+      "el1": {
+        "type": 1,
+        "value": "Ces"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/ces.svg"
+      }
+    }, {
+      "name": "des",
+      "el1": {
+        "type": 1,
+        "value": "Des"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/des.svg"
+      }
+    }, {
+      "name": "es",
+      "el1": {
+        "type": 1,
+        "value": "Es"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/es.svg"
+      }
+    }, {
+      "name": "fes",
+      "el1": {
+        "type": 1,
+        "value": "Fes"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/fes.svg"
+      }
+    }, {
+      "name": "ges",
+      "el1": {
+        "type": 1,
+        "value": "Ges"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/ges.svg"
+      }
+    }, {
+      "name": "as",
+      "el1": {
+        "type": 1,
+        "value": "As"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/as.svg"
+      }
+    }, {
+      "name": "b",
+      "el1": {
+        "type": 1,
+        "value": "B"
+      },
+      "el2": {
+        "type": 2,
+        "value": "sets/img/note/b.svg"
+      }
+    }]
 }

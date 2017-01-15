@@ -99,5 +99,175 @@
       "type": 2,
       "value": "sets/img/glasbila/horn.svg"
     }
+  }, {
+    "name": "Pianino",
+    "el1": {
+      "type": 1,
+      "value": "Pianino"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/pianino.svg"
+    }
+  }, {
+    "name": "Kitara",
+    "el1": {
+      "type": 1,
+      "value": "Kitara"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/kitara.svg"
+    }
+  }, {
+    "name": "Fagot",
+    "el1": {
+      "type": 1,
+      "value": "Fagot"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/basoon.svg"
+    }
+  }, {
+    "name": "Bas klarinet",
+    "el1": {
+      "type": 1,
+      "value": "Bas klarinet"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/bassclarinet.svg"
+    }
+  }, {
+    "name": "Kontrafagot",
+    "el1": {
+      "type": 1,
+      "value": "Kontrafagot"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/contrabasoon.svg"
+    }
+  }, {
+    "name": "Kontrabas",
+    "el1": {
+      "type": 1,
+      "value": "Kontrabas"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/contrabass.svg"
+    }
+  }, {
+    "name": "Cinele",
+    "el1": {
+      "type": 1,
+      "value": "Činele"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/cymbal.svg"
+    }
+  }, {
+    "name": "Angleški rog",
+    "el1": {
+      "type": 1,
+      "value": "Angleški rog"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/englishhorn.svg"
+    }
+  }, {
+    "name": "Čembalo",
+    "el1": {
+      "type": 1,
+      "value": "Čembao"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/harpsichord.svg"
+    }
+  }, {
+    "name": "Marimba",
+    "el1": {
+      "type": 1,
+      "value": "Marimba"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/marimba.svg"
+    }
+  }, {
+    "name": "Oboa",
+    "el1": {
+      "type": 1,
+      "value": "Oboa"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/oboe.svg"
+    }
+  }, {
+    "name": "Pikolo",
+    "el1": {
+      "type": 1,
+      "value": "Pikolo"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/piccolo.svg"
+    }
+  }, {
+    "name": "Timpani",
+    "el1": {
+      "type": 1,
+      "value": "Timpani"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/timpani.svg"
+    }
+  }, {
+    "name": "Pozavna",
+    "el1": {
+      "type": 1,
+      "value": "Pozavna"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/trombone.svg"
+    }
+  }, {
+    "name": "Tuba",
+    "el1": {
+      "type": 1,
+      "value": "Tuba"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/tuba.svg"
+    }
+  }, {
+    "name": "Tamburin",
+    "el1": {
+      "type": 1,
+      "value": "Tamburin"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/tamburin.svg"
+    }
+  }, {
+    "name": "Ksilofon",
+    "el1": {
+      "type": 1,
+      "value": "Ksilofon"
+    },
+    "el2": {
+      "type": 2,
+      "value": "sets/img/glasbila/ksilofon.svg"
+    }
   }]
 }

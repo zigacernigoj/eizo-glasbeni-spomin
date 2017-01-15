@@ -1,13 +1,50 @@
+//level easy medium hard
+var levels = {
+    'easy': 5,
+    'medium' : 8,
+    'hard' : 10
+}
+var level = getUrlParameter("level");
+if (level == undefined) {
+    level = 'easy';
+}
+
+if(level == 'easy'){
+    localStorage.clear();
+}
+
+localStorage.setItem('level', level);
 var allCards;
 var st_odkritih = 0;
+var restPairs = [];
+var clicked = false;
+localStorage.setItem("odkritih", 0);
 /* da je lahko ista koda za vec json datotek */
 
 /*
  timer
  */
-var seconds = 0;
-var minutes = 0;
-var hours = 0;
+var seconds = localStorage.getItem('seconds');
+if(seconds === null){
+    seconds = 0;
+}
+else {
+    seconds = parseInt(seconds)
+}
+var minutes = localStorage.getItem('minutes');
+if(minutes === null){
+    minutes = 0;
+}
+else {
+    minutes = parseInt(minutes)
+}
+var hours = localStorage.getItem('hours');
+if(hours === null){
+    hours = 0;
+}
+else {
+    hours = parseInt(hours)
+}
 var t;
 
 // da zbrises localstorage
@@ -25,6 +62,10 @@ var mode = getUrlParameter("mode");
 if (mode == undefined) {
     mode = 'spomin';
 }
+
+
+
+var number_of_pairs = levels[level];
 
 // limit = cas / poteze / undefined
 // => undefined brez omejitev
@@ -71,14 +112,16 @@ else {
 $.getJSON("sets/" + hash + ".json", function (data) {
     var pairs = data.pairs;
     $.shuffle(pairs);
-    var limit = 10;
+    //var limit = 10;
     var cards = [];
     $.each(pairs, function (index, pair) {
         pair.el1.pair_id = index;
         pair.el2.pair_id = index;
-        if(limit > 0){
+        if(number_of_pairs > 0){
             cards.push(pair.el1, pair.el2);
-            limit --;
+            number_of_pairs --;
+        } else {
+            restPairs.push(pair);
         }
 
     });
@@ -109,7 +152,7 @@ $.getJSON("sets/" + hash + ".json", function (data) {
 });
 
 function get_card_spomin(el) {
-    var card = '<div class="kartica" data-pair="' + el.pair_id + '" data-open="0"><div class="kartica-content back">';
+    var card = '<div class="kartica clickable" data-pair="' + el.pair_id + '" data-open="0"><div class="kartica-content back">';
     switch (el.type) {
         case 1:
             card += '<p>' + el.value + '</p>';
@@ -150,7 +193,13 @@ $(document).ready(function () {
         computeWidth(allCards);
     });
 
-    $('.kartica').on('click', cardClick)
+    $('.clickable').on('click', cardClick);
+
+    //showCongrats();
+    $('body').click(function(e) {
+        console.log('klik');
+
+    });
 });
 
 /*
@@ -217,6 +266,8 @@ function findDivisors(n, bRatio) {
 }
 
 function openCard(card) {
+    var stevilo_odkritih = localStorage.getItem("odkritih");
+    localStorage.setItem("odkritih", parseInt(stevilo_odkritih)+1);
     var curTrans = card.css('transform')
     card.css({'transform': curTrans + ' rotateY(180deg)'});
     card.attr('data-open', '1');
@@ -233,16 +284,40 @@ var cardClick = function () {
     if ($(this).attr("data-open") == 1) {
         return;
     }
+    var stevilo_odkritih = localStorage.getItem("odkritih");
+    console.log(' '+localStorage.getItem('odkritih'));
+    if(parseInt(stevilo_odkritih) > 1){
+        localStorage.setItem("odkritih", 0);
+        $("div[data-open='1']").each(function () {
+            closeCard($(this));
+            $('#prva-izbira').val(-1);
+            $('#izbran').val(0);
+            $('.clickable').on('click', cardClick);
+        });
+    }
+    console.log('before open '+localStorage.getItem("odkritih"));
     openCard($(this));
+    console.log('after open '+localStorage.getItem("odkritih"));
     var cur = $('#prva-izbira').val();
     var izbran = $('#izbran').val();
     var pair_id = $(this).data("pair");
     if (izbran == false) {
+
+        console.log('prva odkrita '+localStorage.getItem("odkritih"));
         $('#izbran').val(1);
         $('#prva-izbira').val(pair_id);
     } else {
-        $('.kartica').off('click');
+        //$('.clickable').off('click');
+
+        console.log('druga odkrita '+localStorage.getItem("odkritih"));
         if (cur == pair_id) {
+
+            console.log('par start '+localStorage.getItem("odkritih"));
+            //  $("div[data-pair='" + cur + "']").attr('data-open', '0');
+            //$("div[data-pair='" + cur + "']").removeClass('clickable');
+            //$("div[data-pair='" + cur + "']").off('click');
+            $('#prva-izbira').val(-1);
+            $('#izbran').val(0);
             st_odkritih = st_odkritih + 1;
             $('#st-odkritih-input').val(st_odkritih);
             $('#st-odkritih').html(st_odkritih);
@@ -255,22 +330,12 @@ var cardClick = function () {
             }
             setTimeout(function () {
                 $("div[data-pair='" + cur + "']").empty();
-                $('#prva-izbira').val(-1);
-                $('#izbran').val(0);
-                $('.kartica').on('click', cardClick);
             }, 2000);
-        }
-        else {
-            setTimeout(function () {
-                $("div[data-open='1']").each(function () {
-                    closeCard($(this));
-                    $('#prva-izbira').val(-1);
-                    $('#izbran').val(0);
-                    $('.kartica').on('click', cardClick);
-                });
-            }, 2000);
+
+            console.log('par end '+localStorage.getItem("odkritih"));
         }
     }
+    //$('.clickable').on('click', cardClick);
 }
 
 function getUrlParameter(sParam) {
@@ -427,36 +492,92 @@ function drop(ev) {
         }
     }
 }
-
 function showCongrats() {
     // Get the modal
     var modal = $('#theEnd');
-    modal.style='';
     console.log(modal.style);
 
     var modalContent = $('#modal-content');
+    var content_game_end = '<div class="modal-header">'+
+        '<h4 class="modal-title">Konec igre</h4>'+
+        '</div>'+
+        '<div class="modal-body">'+
+        '<p>Čestitamo, uspešno si končal igro. Vpiši se na lestvico najboljših igralcev ali izberi novo igro.</p>'+
+        '<br />'+
+        '<form method="post" action="vpisi.php" id="vpisi_form">'+
+        '<input name="cas" value="'+ hours+ ':' + minutes + ':' + seconds +'" type="hidden" />'+
+        '<input name="mode" value="'+ mode+ '" type="hidden" />'+
+        '<input type="text" placeholder="Vzdevek" id="vzedevek" name="vzdevek">'+
+        '<button type="submit" class="btn btn-primary">Potrdi</button>'+
+        '</form>'+
+        '<br />'+
+        '</div>'+
+        '<div class="modal-footer">'+
+        '<a href="index.php" class="btn btn-primary">Nova igra</a>'+
+        '</div>';
 
-    var content =   '<span class="close">&times;</span>' +
-                    '<p>Bravo! Končal si igro</p>' +
-                    '<a href="index.html">Nazaj</a>';
+    var content_game_easy = '<div class="modal-header">'+
+        '<h4 class="modal-title">Končan stopnja "Lahko"</h4>'+
+        '</div>'+
+        '<div class="modal-body">'+
+        '<p>Uspešno opravljena stopnja "lahko". S pritiskom na gumb "Nadaljuj", nadaljuj igro z naslednjo stopnjo. Časi se seštevajo.</p>'+
+        '</div>'+
+        '<div class="modal-footer">'+
+        '<a href="game.php?set='+hash+'&mode='+mode+'&level=medium" class="btn btn-primary">Nadaljuj</a>'+
+        '<a href="index.php" class="btn btn-primary">Izberi drugo igro</a>'+
+        '</div>';
 
-    if(limit === 'cas') {
-        var currentLevel = parseInt(localStorage.getItem("level"));
-        if(currentLevel === 9) {
-            console.log('stopnja 9');
-            content += 'KONČAL SI VSE STOPNJE';
-        }
-        else {
-            localStorage.setItem("level", currentLevel+1);
-            content += '<br><a href="game.html?set=notni_elementi&mode=dd&limit=cas">Naslednja stopnja</a>';
-        }
+    var content_game_medium = '<div class="modal-header">'+
+        '<h4 class="modal-title">Končan stopnja "Srednje težko"</h4>'+
+        '</div>'+
+        '<div class="modal-body">'+
+        '<p>Uspešno opravljena stopnja "srednje težko". S pritiskom na gumb "Nadaljuj", nadaljuj igro z naslednjo stopnjo. Časi se seštevajo.</p>'+
+        '</div>'+
+        '<div class="modal-footer">'+
+        '<a href="game.php?set='+hash+'&mode='+mode+'&level=hard" class="btn btn-primary">Nadaljuj</a>'+
+        '<a href="index.php" class="btn btn-primary">Izberi drugo igro</a>'+
+        '</div>';
+
+    if(level == 'easy'){
+        modalContent.html( content_game_easy );
+        localStorage.setItem('seconds', seconds);
+        localStorage.setItem('minutes', minutes);
+        localStorage.setItem('hours', hours);
     }
-    modalContent.html( content );
+    else if (level == 'medium'){
+        modalContent.html( content_game_medium );
+        localStorage.setItem('seconds', seconds);
+        localStorage.setItem('minutes', minutes);
+        localStorage.setItem('hours', hours);
+    }
+    else {
+        modalContent.html(content_game_end);
+
+        localStorage.clear();
+    }
+
+        /*var content =   '<span class="close">&times;</span>' +
+                        '<p>Bravo! Končal si igro</p>' +
+                        '<a href="index.html">Nazaj</a>';
+
+        if(limit === 'cas') {
+            var currentLevel = parseInt(localStorage.getItem("level"));
+            if(currentLevel === 9) {
+                console.log('stopnja 9');
+                content += 'KONČAL SI VSE STOPNJE';
+            }
+            else {
+                localStorage.setItem("level", currentLevel+1);
+                content += '<br><a href="game.html?set=notni_elementi&mode=dd&limit=cas">Naslednja stopnja</a>';
+            }
+        }
+        console.log(content);
+        modalContent.html( content );*/
 
     // Get the <span> element that closes the modal
     // var span = document.getElementsByClassName("close")[0];
 
-    modal.style.display = "block";
+    modal.css('display', 'block');
 
     // When the user clicks on <span> (x), close the modal
     // span.onclick = function() {
@@ -465,12 +586,10 @@ function showCongrats() {
     // }
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-            window.location.href = "index.html";
-        }
-    }
+    $('.close-modal').on('click', function(){
+        console.log('click');
+        modal.css('display', 'none');
+    });
 }
 
 function showEnd() {
@@ -486,14 +605,14 @@ function showEnd() {
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
-        window.location.href = "index.html";
+        window.location.href = "../index.php";
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
-            window.location.href = "index.html";
+            window.location.href = "../index.php";
         }
     }
 }

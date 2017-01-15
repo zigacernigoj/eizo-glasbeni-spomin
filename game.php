@@ -36,7 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Glasbeni spomin</a>
+            <a class="navbar-brand" href="index.php">Glasbeni spomin</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <!--<ul class="nav navbar-nav">
@@ -61,9 +61,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Spomin <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="game.html?set=notni_elementi&mode=spomin">Notni elementi</a></li>
-                        <li><a href="game.html?set=glasbila&mode=spomin">Glasbila</a></li>
-                        <li><a href="game.html?set=note&mode=spomin">Note</a></li>
+                        <li><a href="game.php?set=notni_elementi&mode=spomin">Notni elementi</a></li>
+                        <li><a href="game.php?set=glasbila&mode=spomin">Glasbila</a></li>
+                        <li><a href="game.php?set=note&mode=spomin">Note</a></li>
                     </ul>
                 </li>
 
@@ -71,9 +71,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Drag&Drop <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="game.html?set=notni_elementi&mode=dd">Notni elementi</a></li>
-                        <li><a href="game.html?set=glasbila&mode=dd">Glasbila</a></li>
-                        <li><a href="game.html?set=note&mode=dd">Note</a></li>
+                        <li><a href="game.php?set=notni_elementi&mode=dd">Notni elementi</a></li>
+                        <li><a href="game.php?set=glasbila&mode=dd">Glasbila</a></li>
+                        <li><a href="game.php?set=note&mode=dd">Note</a></li>
                     </ul>
                 </li>
 
@@ -109,6 +109,7 @@
 <input type="hidden" id="izbran" name="izbran" value="0">
 <input type="hidden" id="st-odkritih-input" value="0">
 <input type="hidden" id="st-vseh-input">
+<input type="hidden" id="st-trenutno-odkritih" value="0">
 
 
 </body>
