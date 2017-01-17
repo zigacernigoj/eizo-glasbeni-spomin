@@ -158,7 +158,7 @@ function get_card_spomin(el) {
             card += '<p>' + el.value + '</p>';
             break;
         case 2:
-            card += '<img src="' + el.value + '" class="img-responsive">'; //</div></div></div>
+            card += '<img src="' + el.value + '" class="img-responsive kslika">'; //</div></div></div>
             break;
     }
     card += '</div> <div class="front"></div> </div>'; //</div>
@@ -177,7 +177,7 @@ function get_card_dd(el) {
             card += '<p ondrop="drop(event)" ondragover="allowDrop(event)">' + el.value + '</p>';
             break;
         case 2:
-            card += '<img src="' + el.value + '" id="' + el.pair_id + '" class="img-responsive" draggable="true" ondragstart="drag(event)">'; //</div></div></div>
+            card += '<img src="' + el.value + '" id="' + el.pair_id + '" class="img-responsive kslika" draggable="true" ondragstart="drag(event)">'; //</div></div></div>
             break;
     }
     card += '</div> <!--<div class="front"></div>--> </div>'; //</div>
@@ -232,6 +232,7 @@ function computeWidth(n) {
     $('.dd p').css({
         'line-height': size + 'px'
     });
+    $('.kslika').height(size);
 
 }
 
